@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-	<body class="home">
-		<header>
-			<h2>Severin Kaderli</h2>
-			<p>
-				Web developer
-			</p>
-			<p>
-				<i class="fa fa-github"></i> <a href="">GitHub</a>
-			</p>
-		</header>
-		<section id="projects">
-			<h2>Projects</h2>
-			{% for project in site.projects %}
-				<article class="project">
-					<h3>{{project.name}}</h3>
-				</article>
-			{% endfor %}
-			{{site.collections.projects}}
+	<body>
+		<div class="main-container">
+			{% include header.html %}
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+				<i class="fa fa-github"></i>
+			</nav>
+			<main>
+			<section id="blog">
+				<h2>Newest posts</h2>
+				{% for post in site.posts limit:5 %}
+					<article class="post">
+						<h3><small>{{post.date | date: "%F"}}</small> <a href="{{post.url}}">{{post.title}}</a></h3>
+					</article>
+				{% endfor %}
+			</section>
+
+
+			<section id="projects">
+				<h2>Projects that I created</h2>
+				{% for project in site.projects %}
+					<article class="project">
+						<h3>{{project.name}}</h3>
+						<div class="project-tags">
+							{% for tag in project.tags %}
+								<i class="devicon-{{tag}}"></i>
+							{% endfor %}
+						</div>
+						{% if project.github %}
+							<p><a href="https://github.com/severinkaderli/{{project.github}}">Check it out on GitHub</a></p>
+						{% endif %}
+
+						{% if project.demo %}
+							<p><a href="{{project.demo}}">Demo</a></p>
+						{% endif %}
+						
+						<p>{{project}}</p>
+
+					</article>
+				{% endfor %}
+				
+			</section>
 			
-		</section>
-		<section id="blog">
-			<h2>Blog</h2>
-			{% for post in site.posts limit:5 %}
-				<article class="post">
-					<h3><small>{{post.date | date: "%F"}}</small> <a href="{{post.url}}">{{post.title}}</a></h3>
-				</article>
-			{% endfor %}
-		</section>
-		<footer>
-			&copy;2017 - Severin Kaderli
-		</footer>
+			</main>
+		</div>
 	</body>
 </html>

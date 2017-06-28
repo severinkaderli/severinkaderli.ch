@@ -1,78 +1,120 @@
-
 body {
-	font-family: "Noto Sans", sans-serif;
-	width: 1024px;
+	font-family: "Roboto", sans-serif;
 	margin: 0 auto;
 	font-size: 14px;
+	line-height: 22px;
+	height: 100%;
 }
 
-h1 > small,
-h2 > small,
-h3 > small,
-h4 > small,
-h5 > small,
-h6 > small {
-	font-weight: normal;
+:root {
+	--padding: 20px;
+	--primary-color: #FF6C0D;
+	--secondary-color: #E8420C;
 }
 
 a {
-	color: blue;
+	color: var(--primary-color);
 	text-decoration: none;
-	&:visited {
-		text-decoration: none;
-		color: blue;
-	}
+
 	&:hover {
 		text-decoration: underline;
 	}
+
+	&:visited {
+		color: var(--primary-color);
+	}
 }
 
-.home {
-	h2 {
-		text-align: center;
-	}
-	header {
-		text-align: center;
-	}
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0.5em;
+}
 
-	header:after,
-	#projects:after,
-	#blog:after {
-		display: block;
-		content: "";
-		width: 50%;
-		margin: 0 auto;
-		border-bottom: 1px solid black;
-	}
+.main-container {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 20% 1fr;
+	grid-template-rows: auto 1fr auto;
+}
 
-	#projects {
-		h3 {
-			margin-bottom: 0;
-		}
-		.project-description {
-			p {
-				width: 80%;
+header {
+	grid-column: 2 / span 1;
+	grid-row: 1 / span 1;
+
+	text-align: center;
+
+	padding: var(--padding) 0;
+}
+
+nav {
+	grid-column: 1 / span 1;
+	grid-row: 1 / span 3;
+	padding: var(--padding);
+	text-align: right;
+	background: var(--primary-color);
+	color: #FFF;
+	font-size: 1.5em;
+	ul {
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin: var(--padding) 0;
+			position: relative;
+			
+			a {
+				color: #FFF;
 				display: inline-block;
-			}
 
-			img {
-				width: 20%;
-				height: auto;
-				display: inline-block;
-			}
-		}
-	}
+				&:hover {
+					text-decoration: underline;
+					color: var(--secondary-color);
+				}
 
-	#blog {
-		article {
-			margin: 0;
-		}
-		h3 {
-			margin: 0;
-			small {
-				margin-right: 5px;
+				&:visited {
+					color: #FFF;
+				}
 			}
 		}
 	}
+}
 
+main {
+	grid-column: 2 / span 1;
+	grid-row: 2 / span 1;
+	padding: var(--padding);
+	p {
+		max-width: 100ch;
+	}
+}
+
+footer {
+	grid-column: 1 / span 1;
+	grid-row: 3 / span 1;
+	text-align: center;
+	padding: var(--padding) 0;
+	color: #FFF;
+}
+
+section {
+	margin-bottom: calc(3 * var(--padding));
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+.project {
+
+	.project-image {
+		img {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	.project-tags {
+		font-size: 1.5em;
+		color: var(--secondary-color);
+	}
 }
