@@ -30,9 +30,13 @@ collections:
 github: "severinkaderli"
 
 # URL
-url: "http://localhost:4000"
+url: "https://severinkaderli.ch"
 baseurl: "/"
 
+# Posts configuration
+permalink: /:year/:month/:day/:title.html
+paginate: 5
+paginate_path: "/blog/:num/"
 
 # Build settings
 sass:
@@ -41,6 +45,7 @@ sass:
 markdown: kramdown
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock

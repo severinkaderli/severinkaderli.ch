@@ -1,5 +1,4 @@
 ---
-layout: project
 name: D&D-Tools
 tags:
     - html5-plain
