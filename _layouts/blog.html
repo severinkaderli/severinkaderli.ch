@@ -10,17 +10,20 @@
 				<time datetime="{{page.date}}">{{post.date | date: "%F"}}</time>
 			</div>
 			
-			{{post.content}}
+			{{post.excerpt}}
+
+			<p><a href="{{ post.url }}">Read more...</a></p>
 		</article>
 	{% endfor %}
 	{% if paginator.total_pages > 1 %}
 		<div class="pagination">
-			{% if paginator.previous_page %}
-				<a class="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Previous page</a>
-			{% endif %}
 			{% if paginator.next_page %}
-				<a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next page &raquo;</a>
+				<a class="prev" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Older</a>
 			{% endif %}
+			{% if paginator.previous_page %}
+				<a class="next" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer &raquo;</a>
+			{% endif %}
+			
 		</div>
 	{% endif %}
 	</main>

@@ -25,13 +25,13 @@ github_username:  jekyll
 # Collections
 collections:
   projects:
-    output: true
+    output: false
 
 github: "severinkaderli"
 
 # URL
 url: "https://severinkaderli.ch"
-baseurl: "/"
+baseurl: ""
 
 # Posts configuration
 permalink: /:year/:month/:day/:title.html
@@ -46,6 +46,7 @@ markdown: kramdown
 gems:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-sitemap
 exclude:
   - Gemfile
   - Gemfile.lock
