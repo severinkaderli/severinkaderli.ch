@@ -16,7 +16,6 @@ body {
 	--padding: 20px;
 	--primary-color: #FF6C0D;
 	--secondary-color: #E8420C;
-	--nav-width: 150px;
 }
 
 a {
@@ -42,37 +41,36 @@ h1 {
 
 .main-container {
 	min-height: 100vh;
-	display: grid;
-	grid-template-columns: var(--nav-width) 1fr;
-	grid-template-rows: auto 1fr auto;
 }
 
+
 header {
-	grid-column: 2 / span 1;
-	grid-row: 1 / span 1;
+
 	text-align: center;
 	padding: var(--padding);
+	max-width: 150ch;
+	margin: 0 auto;
 }
 
 nav {
-	width: var(--nav-width);
-	height: 100vh;
+
 	padding: var(--padding);
-	text-align: right;
+	text-align: center;
 	background: var(--primary-color);
 	color: #FFF;
 	font-size: 1.5em;
-	position: fixed;
-	top: 0;
+
 	ul {
 		list-style: none;
 		padding: 0;
-
+		margin: 0;
 		li {
 			margin: var(--padding) 0;
 			position: relative;
-			
-			
+			display: inline-block;
+			&:not(:last-of-type) {
+					margin-right: var(--padding);
+				}
 		}
 	}
 
@@ -91,9 +89,9 @@ nav {
 }
 
 main {
-	grid-column: 2 / span 1;
-	grid-row: 2 / span 1;
+	max-width: 100ch;
 	padding: var(--padding);
+	margin: 0 auto;
 	p {
 		max-width: 100ch;
 	}
@@ -188,28 +186,5 @@ section {
 	body {
 		font-size: 12px;
 		line-height: 20px;
-	}
-
-	header {
-		grid-column: 1 / span 2;
-	}
-
-	main {
-		grid-column: 1 / span 2;
-	}
-	nav {
-		width: 100%;
-		height: auto;
-		position: static;
-		text-align: center;
-		ul {
-			margin: 0;
-			li {
-				display: inline-block;
-				&:not(:last-of-type) {
-					margin-right: var(--padding);
-				}
-			}
-		}
 	}
 }

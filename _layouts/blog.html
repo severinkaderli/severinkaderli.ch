@@ -1,31 +1,27 @@
 {% include head.html %}
-<div class="main-container">
-	{% include header.html %}
-	<main>
-	<h1>{{page.title}}</h1>
-	{% for post in paginator.posts %}
-		<article class="post">
-			<h2>{{post.title}}</h2>
-			<div class="post-date">
-				<time datetime="{{page.date}}">{{post.date | date: "%F"}}</time>
-			</div>
-			
-			{{post.excerpt}}
-
-			<p><a href="{{ post.url }}">Read more...</a></p>
-		</article>
-	{% endfor %}
-	{% if paginator.total_pages > 1 %}
-		<div class="pagination">
-			{% if paginator.next_page %}
-				<a class="prev" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Older</a>
-			{% endif %}
-			{% if paginator.previous_page %}
-				<a class="next" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer &raquo;</a>
-			{% endif %}
-			
+<main>
+<h1>{{page.title}}</h1>
+{% for post in paginator.posts %}
+	<article class="post">
+		<h2>{{post.title}}</h2>
+		<div class="post-date">
+			<time datetime="{{page.date}}">{{post.date | date: "%F"}}</time>
 		</div>
-	{% endif %}
-	</main>
-</div>
+		
+		{{post.excerpt}}
+		<p><a href="{{ post.url }}">Read more...</a></p>
+	</article>
+{% endfor %}
+{% if paginator.total_pages > 1 %}
+	<div class="pagination">
+		{% if paginator.next_page %}
+			<a class="prev" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Older</a>
+		{% endif %}
+		{% if paginator.previous_page %}
+			<a class="next" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Newer &raquo;</a>
+		{% endif %}
+		
+	</div>
+{% endif %}
+</main>
 {% include footer.html %}
