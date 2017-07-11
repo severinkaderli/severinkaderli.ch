@@ -2,9 +2,9 @@
 
 <main>
 <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
-	<h1 itemprop="name">{{page.title}}</h1>
+	<h1 itemprop="name headline mainEntityOfPage">{{page.title}}</h1>
 	<div class="post-date">
-		<time datetime="{{page.date}}" itemprop="datePublished">{{page.date | date: "%F"}}</time>
+		<time datetime="{{page.date}}" itemprop="datePublished dateModified">{{page.date | date: "%F"}}</time> by <address itemprop="author">{{ site.author }}</address>
 	</div>
 	
 	<div itemprop="articleBody">

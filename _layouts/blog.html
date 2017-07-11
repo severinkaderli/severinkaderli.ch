@@ -5,7 +5,7 @@
 	<article class="post">
 		<h2>{{post.title}}</h2>
 		<div class="post-date">
-			<time datetime="{{page.date}}">{{post.date | date: "%F"}}</time>
+			<time datetime="{{page.date}}">{{post.date | date: "%F"}}</time> by <address>{{ site.author }}</address>
 		</div>
 		
 		{{post.excerpt}}
