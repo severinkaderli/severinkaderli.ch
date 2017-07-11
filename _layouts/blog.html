@@ -9,7 +9,10 @@
 		</div>
 		
 		{{post.excerpt}}
-		<p><a href="{{ post.url }}">Read more...</a></p>
+
+		{% if post.excerpt != post.content %}
+			<p><a href="{{ post.url }}">Read more...</a></p>
+		{% endif %}
 	</article>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
