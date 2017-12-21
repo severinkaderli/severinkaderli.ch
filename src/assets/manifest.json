@@ -1,0 +1,9 @@
+{
+	"name": "Severin Kaderli",
+	"short_name": "Severin Kaderli",
+	"start_url": "./",
+	"display": "standalone",
+	"background_color": "#FFF",
+	"theme_color": "#FF6C0D",
+	"Beschreibung": "Website of Severin Kaderli."
+}
