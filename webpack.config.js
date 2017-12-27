@@ -34,7 +34,11 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "index.html",
 			inject: "body",
-			hash: true
+			hash: true,
+			minify: {
+				minifyCSS: true,
+				minifyJS: true
+			}
 		}),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
