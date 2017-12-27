@@ -19,7 +19,7 @@ body {
 }
 
 a {
-	color: var(--primary-color);
+	color: var(--secondary-color);
 	text-decoration: none;
 
 	&:hover {
@@ -27,7 +27,7 @@ a {
 	}
 
 	&:visited {
-		color: var(--primary-color);
+		color: var(--secondary-color);
 	}
 }
 
@@ -135,8 +135,24 @@ section {
 	}
 
 	.project-tags {
-		font-size: 1.5em;
-		color: var(--secondary-color);
+		font-size: 1em;
+		ul {
+			list-style-type: none;
+			display: block;
+			padding: 0;
+			li {
+				display: inline-block;
+				
+				&:not(:last-child):after {
+					content: "•";
+					padding-left: 5px;
+					padding-right: 3px;
+					display: inline-block;
+				}
+
+				
+			}
+		}
 	}
 
 	&:not(:last-of-type):after {
