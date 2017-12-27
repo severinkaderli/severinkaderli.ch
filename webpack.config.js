@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -34,6 +35,11 @@ module.exports = {
 			template: "index.html",
 			inject: "body",
 			hash: true
+		}),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false
+			}
 		})
 	]
 }
