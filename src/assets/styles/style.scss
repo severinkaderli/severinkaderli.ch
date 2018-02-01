@@ -7,7 +7,7 @@ $breakpoint: 850px;
 body {
 	font-family: "Roboto", sans-serif;
 	margin: 0 auto;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 22px;
 	height: 100%;
 }
@@ -157,15 +157,10 @@ section {
 	:root {
 		--padding: 15px;
 	}
-
-	body {
-		font-size: 12px;
-		line-height: 20px;
-	}
 }
 
 svg {
-	width: 16px;
-	height: 16px;
+	width: 32px;
+	height: 32px;
 	fill: #FFF;
 }

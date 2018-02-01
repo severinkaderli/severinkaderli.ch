@@ -1,9 +1,16 @@
 {
 	"name": "Severin Kaderli",
-	"short_name": "Severin Kaderli",
+	"short_name": "S. Kaderli",
 	"start_url": "./",
 	"display": "standalone",
 	"background_color": "#FFF",
 	"theme_color": "#FF6C0D",
-	"description": "Website of Severin Kaderli."
+	"description": "Website of Severin Kaderli.",
+	"icons" : [
+		{
+			"src": "./assets/images/512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
 }

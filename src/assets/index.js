@@ -1,2 +1,11 @@
-import "!file-loader?name=assets/[name].[ext]!./manifest.json";
+import "!file-loader?name=./[name].[ext]!./manifest.json";
+import "!file-loader?name=assets/images/[name].[ext]!./images/favicon.png";
+import "!file-loader?name=assets/images/[name].[ext]!./images/512x512.png";
+import "!file-loader?name=./[name].[ext]!./sw.js";
 import "./styles/style.scss";
+
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+		navigator.serviceWorker.register('./sw.js');
+	});
+}
