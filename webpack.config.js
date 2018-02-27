@@ -5,12 +5,9 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 const PUBLIC_PATH = 'https://severinkaderli.com/';  // webpack needs the trailing slash for output.publicPath 
 
-
-
-
-
 module.exports = {
 	context: __dirname + "/src",
+	mode: 'production',
 	entry: "./assets/index.js",
 	output: {
 		path: __dirname + "/dist",
@@ -58,11 +55,6 @@ module.exports = {
 				minifyJS: true
 			},
 			filename: "notes/index.html"
-		}),
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
 		}),
 		new SWPrecacheWebpackPlugin(
 			{
